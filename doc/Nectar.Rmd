@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ![](R_Nectar_integration.gif)
 
 
-# 1. Setup Nectar
+# 1. Set up Nectar
 
 i. Log-on to [NectarCloud](https://dashboard.rc.nectar.org.au/). For researchers in Australia, use "Australian Log in via AAF" and search for your organisation. 
 
@@ -97,11 +97,11 @@ install.packages("tidyverse")
 
 ---
 
-# 3. Setup Pipeline to connect R and Nectar
+# 3. Set up Pipeline to connect R and Nectar
 
 Reference: https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing
 
-## a. Understanding the Pipeline
+## a. The Pipeline
 Recall that what we want to achieve is to push some R code to the cloud, run it there and then fetch the result back. Suppose we have some R code:
 
 ```{r}
@@ -131,7 +131,7 @@ scp -i {key-file} {R-file} {remote-working-dir} && \
 
 While this works, if you actually run it, you'll realise you are prompted for password three times, one time for each command. This is undesirable, which leads us to consider the following setup.
 
-## b. Better Efficiency
+## b. Improve Efficiency
 
 ### Using `ssh` configuration file
 

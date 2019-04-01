@@ -100,7 +100,7 @@ $(document).ready(function () {
     <div id="text-table-of-contents">
       <ul>
       <li><a href="#demo">Demo</a></li>
-      <li><a href="#setup-nectar">1. Setup Nectar</a></li>
+      <li><a href="#set-up-nectar">1. Set up Nectar</a></li>
       <li><a href="#set-up-r-on-a-fresh-debian-server">2. Set up R on a fresh Debian server</a><ul>
       <li><a href="#i.-install-basic-linux-tools">i. Install basic Linux tools</a></li>
       <li><a href="#ii.-add-cran-repository-to-apt-get">ii. Add CRAN repository to apt-get</a></li>
@@ -108,9 +108,9 @@ $(document).ready(function () {
       <li><a href="#iv.-install-the-latest-verison-of-r">iv. Install the latest verison of R</a></li>
       <li><a href="#v.-install-the-tidyverse-package">v. Install the <code>tidyverse</code> package</a></li>
       </ul></li>
-      <li><a href="#setup-pipeline-to-connect-r-and-nectar">3. Setup Pipeline to connect R and Nectar</a><ul>
-      <li><a href="#a.-understanding-the-pipeline">a. Understanding the Pipeline</a></li>
-      <li><a href="#b.-better-efficiency">b. Better Efficiency</a></li>
+      <li><a href="#set-up-pipeline-to-connect-r-and-nectar">3. Set up Pipeline to connect R and Nectar</a><ul>
+      <li><a href="#a.-the-pipeline">a. The Pipeline</a></li>
+      <li><a href="#b.-improve-efficiency">b. Improve Efficiency</a></li>
       <li><a href="#c.-taking-advantage-of-rstudio-terminal-facilities">c. Taking advantage of RStudio terminal facilities</a></li>
       </ul></li>
       </ul>
@@ -125,8 +125,8 @@ $(document).ready(function () {
 
 </div>
 </div>
-<div id="setup-nectar" class="section level1">
-<h1>1. Setup Nectar</h1>
+<div id="set-up-nectar" class="section level1">
+<h1>1. Set up Nectar</h1>
 <ol style="list-style-type: lower-roman">
 <li><p>Log-on to <a href="https://dashboard.rc.nectar.org.au/">NectarCloud</a>. For researchers in Australia, use “Australian Log in via AAF” and search for your organisation.</p></li>
 <li><p>Once you are at the dashboard, go to the ‘Instances’ tab (on the left), then click the “Launch instance” button (on the right) and follow the instructions.</p>
@@ -201,11 +201,11 @@ sudo apt install r-base-dev r-base</code></pre>
 <hr />
 </div>
 </div>
-<div id="setup-pipeline-to-connect-r-and-nectar" class="section level1">
-<h1>3. Setup Pipeline to connect R and Nectar</h1>
+<div id="set-up-pipeline-to-connect-r-and-nectar" class="section level1">
+<h1>3. Set up Pipeline to connect R and Nectar</h1>
 <p>Reference: <a href="https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing" class="uri">https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing</a></p>
-<div id="a.-understanding-the-pipeline" class="section level2">
-<h2>a. Understanding the Pipeline</h2>
+<div id="a.-the-pipeline" class="section level2">
+<h2>a. The Pipeline</h2>
 <p>Recall that what we want to achieve is to push some R code to the cloud, run it there and then fetch the result back. Suppose we have some R code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># test.R</span>
 x &lt;-<span class="st"> </span><span class="dv">99999</span>
@@ -226,8 +226,8 @@ x &lt;-<span class="st"> </span><span class="dv">99999</span>
 </ul>
 <p>While this works, if you actually run it, you’ll realise you are prompted for password three times, one time for each command. This is undesirable, which leads us to consider the following setup.</p>
 </div>
-<div id="b.-better-efficiency" class="section level2">
-<h2>b. Better Efficiency</h2>
+<div id="b.-improve-efficiency" class="section level2">
+<h2>b. Improve Efficiency</h2>
 <div id="using-ssh-configuration-file" class="section level3">
 <h3>Using <code>ssh</code> configuration file</h3>
 <!-- (I must confess that I am reluctant to touch the `~/ssh/config` file at the beginning, but there does not seem to be an alternative!) -->
